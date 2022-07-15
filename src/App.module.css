@@ -22,11 +22,22 @@
   margin: 15px;
 }
 
-input[type="text"] {
+input{
   background-color: #F4F6FC;
   border-radius: 0.5rem;
   border: none;
   height: 3rem;
   padding: 0 1rem;
   margin: 0.8rem auto;
+}
+.Links {
+  display: flex;
+  justify-content: space-between;
+}
+.Link {
+  text-decoration: none;
+  background: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.4rem;
 }

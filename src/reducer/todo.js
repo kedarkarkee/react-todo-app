@@ -1,5 +1,10 @@
-export const initialTodos = [
+const getTodoListFromLS = () => {
+    const todos = localStorage.getItem("todoList")
+    return JSON.parse(todos) || []
+}
 
+export const initialTodos = [
+...getTodoListFromLS()
 ];
 
 export const todoActions = {

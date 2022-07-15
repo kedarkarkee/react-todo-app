@@ -1,4 +1,5 @@
-import { useReducer, useRef } from 'react';
+import { useEffect, useReducer, useRef } from 'react';
+import {Link} from "react-router-dom"
 
 import classes from './App.module.css';
 import Button from './components/Button/button';
@@ -9,6 +10,10 @@ function App() {
 const [todos, dispatch] = useReducer(todoReducer, initialTodos)
 
   const inputValue = useRef('');
+
+  useEffect(() => {
+    localStorage.setItem("todoList",JSON.stringify(todos))
+  },[todos])
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -32,6 +37,9 @@ const [todos, dispatch] = useReducer(todoReducer, initialTodos)
   return (
     <div className={classes.app}>
       <h2 className={classes.title}>TODO App</h2>
+      <div className={classes.Links}>
+        <Link className={classes.Link} to="/online">Online</Link>
+      </div>
       <div className={classes.todoList}>
         {
           todos.length === 0 ?
